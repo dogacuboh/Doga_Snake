@@ -10,6 +10,7 @@ from app.random_snake import random_move
 from app.food_snake import food_move
 from app.wall_snake import wall_move
 from app.smart_snake import smart_move
+from app.doga_snake import doga_move
 
 snake_num = 0
 
@@ -30,7 +31,7 @@ def ping():
 @bottle.post('/start')
 def start():
     game_state = bottle.request.json
-    snake_colour = "#00FF00"
+    snake_colour = "#ff0000"
     return start_response(snake_colour)
 
 
@@ -53,6 +54,8 @@ def move():
         direction = wall_move(game_state, new_board)
     if snake_num == 4:
         direction = smart_move(game_state, new_board)
+    if snake_num == 5:
+        direction = doga_move(game_state, new_board)
     return move_response(direction)
 
 
@@ -71,7 +74,7 @@ def is_input(temp):
     return False
   if not len(temp)==1:
     return False 
-  if int(temp)<1 or int(temp)>4:
+  if int(temp)<1 or int(temp)>5:
     return False 
   return True
 
@@ -83,7 +86,8 @@ if __name__ == '__main__':
     print("2) Food Finding Snake")
     print("3) Wall Avoiding Snake")
     print("4) Weighted move Snake")
-    print("\nInput a number between 1-4 to select between the snakes")
+    print("5) Doga Snake")
+    print("\nInput a number between 1-5 to select between the snakes")
     temp = input()
     while not(is_input(temp)):
       print("Invalid Input Please try again")

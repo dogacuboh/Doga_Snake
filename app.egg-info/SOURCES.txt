@@ -4,6 +4,7 @@ app/__init__.py
 app/api.py
 app/board.py
 app/constants.py
+app/doga_snake.py
 app/food_snake.py
 app/random_snake.py
 app/smart_snake.py
