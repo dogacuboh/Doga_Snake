@@ -1,0 +1,13 @@
+[tool]
+[tool.poetry]
+authors = ["Your Name <you@example.com>"]
+name = "app"
+version = "0.0.0"
+[tool.poetry.dependencies]
+bottle = "==0.12.13"
+gevent = "==1.3.6"
+greenlet = "==0.4.14"
+gunicorn = "==19.9.0"
+numpy = "==1.16.2"
+pathfinding = "==0.0.3"
+python = "^3.7"
