@@ -45,6 +45,7 @@ def move():
     # 2 = food snake
     # 3 = wall snake
     # 4 = smart snake
+    # 5 = doga snake
  
     if snake_num == 1:
         direction = random_move()
