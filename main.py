@@ -60,7 +60,6 @@ def move():
     return move_response(direction)
 
 
-
 @bottle.post('/end')
 def end():
     game_state = bottle.request.json
